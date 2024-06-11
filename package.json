@@ -1,0 +1,23 @@
+{
+  "name": "questionbabylon",
+  "version": "1.0.0",
+  "description": "给面用的",
+  "main": "index.js",
+  "scripts": {
+    "babel": "babel index.js --out-file compiled.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Meihina/QuestionBabylon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Meihina/QuestionBabylon/issues"
+  },
+  "homepage": "https://github.com/Meihina/QuestionBabylon#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "typescript": "^5.4.5"
+  }
+}
