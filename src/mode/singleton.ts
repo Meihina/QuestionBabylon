@@ -6,15 +6,20 @@ class Singleton {
   private payload: TPayload = {};
 
   constructor(payload: TPayload) {
-    this.payload = payload;
+    if (!Singleton.instance) {
+      this.payload = payload;
+      Singleton.instance = this;
+    } else {
+      return Singleton.instance;
+    }
   }
 
-  static getInstance(payload: TPayload) {
-    if (!Singleton.instance) {
-      Singleton.instance = new Singleton(payload);
-    }
-    return Singleton.instance;
-  }
+  // static getInstance(payload: TPayload) {
+  //   if (!Singleton.instance) {
+  //     Singleton.instance = new Singleton(payload);
+  //   }
+  //   return Singleton.instance;
+  // }
 
   getPayload() {
     return this.payload;
@@ -29,8 +34,8 @@ class Singleton {
   }
 }
 
-const singleA = Singleton.getInstance({ a: 10, b: 20 });
-const singleB = Singleton.getInstance({ a: 10, b: 20 });
+const singleA = new Singleton({ a: 10, b: 20 }); // 这里会创建
+const singleB = new Singleton({ a: 10, b: 20 }); // 这里直接返回
 singleA.setField('a', 11);
 
 console.log(singleA, singleB, singleA === singleB);
