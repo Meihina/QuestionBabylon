@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "给面用的",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "babel": "rm -rf compiled && mkdir compiled && tsc --outDir compiled"
   },
@@ -25,5 +26,8 @@
     "eslint-plugin-promise": "^6.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "glob": "^11.0.0"
   }
 }
